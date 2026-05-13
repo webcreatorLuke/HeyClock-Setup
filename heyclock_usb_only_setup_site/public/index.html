@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HeyClock USB Setup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">HeyClock</p>
+      <h1>USB Setup</h1>
+      <p>Plug in HeyClock, connect by USB, save your settings, and you’re ready.</p>
+    </div>
+    <div class="pill">USB only</div>
+  </section>
+
+  <section class="help-card">
+    <div>
+      <h3>Setup guide</h3>
+      <p>Download the printable instructions.</p>
+    </div>
+    <a href="instructions.pdf" download class="download-btn">Download Instructions</a>
+  </section>
+
+  <section class="steps">
+    <div class="step active" id="step1">Connect</div>
+    <div class="step" id="step2">Settings</div>
+    <div class="step" id="step3">Ready</div>
+  </section>
+
+  <section class="card center" id="connectPanel">
+    <h2>1. Connect HeyClock</h2>
+    <p>Plug HeyClock into this computer with a data USB cable, then click Connect.</p>
+    <button id="connectBtn" class="big-btn">Connect HeyClock</button>
+    <p class="muted">Use Chrome or Edge on a computer. Close Arduino Serial Monitor first.</p>
+  </section>
+
+  <section class="card hidden" id="settingsPanel">
+    <h2>2. Device Settings</h2>
+    <p>Choose the basic settings for this HeyClock.</p>
+
+    <div class="setup-grid">
+      <label>Device name
+        <input id="deviceName" type="text" value="HeyClock">
+      </label>
+
+      <label>Timezone
+        <select id="timezone">
+          <option value="America/Los_Angeles">Pacific Time</option>
+          <option value="America/Denver">Mountain Time</option>
+          <option value="America/Chicago">Central Time</option>
+          <option value="America/New_York">Eastern Time</option>
+          <option value="UTC">UTC</option>
+        </select>
+      </label>
+
+      <label>Language
+        <select id="language">
+          <option value="en-US">English</option>
+          <option value="es-US">Spanish</option>
+          <option value="fr-FR">French</option>
+        </select>
+      </label>
+
+      <label>Alarm time
+        <input id="alarmTime" type="time" value="07:30">
+      </label>
+
+      <button id="saveSetupBtn" class="big-btn">Save Setup</button>
+    </div>
+  </section>
+
+  <section class="card hidden ready" id="readyPanel">
+    <h2>HeyClock is ready</h2>
+    <p>Your settings are saved. You can unplug HeyClock when finished.</p>
+  </section>
+
+  <section class="card">
+    <h2>Log</h2>
+    <pre id="logBox">Ready.</pre>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
